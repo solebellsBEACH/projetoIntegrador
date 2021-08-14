@@ -1,0 +1,60 @@
+/* Lógico_1: */
+
+CREATE TABLE Animais (
+    Cachorro varchar(50),
+    Gato varchar(50),
+    Calopsita varchar(50),
+    Hamster varchar(50),
+    codigo varchar(100) PRIMARY KEY,
+    sexo varchar(50),
+    fk_Doador_codigo varchar(50)
+);
+
+CREATE TABLE Doador (
+    Nome varchar(100),
+    nome_usuario varchar(50),
+    senha varchar(50),
+    codigo varchar(50) PRIMARY KEY
+);
+
+CREATE TABLE Donatario (
+    nome varchar(100),
+    nome_usuario varchar(50),
+    senha varchar(50),
+    codigo varchar(50) PRIMARY KEY
+);
+
+CREATE TABLE Solicita_Doa (
+    fk_Donatario_codigo varchar(50),
+    fk_Doador_codigo varchar(50)
+);
+
+CREATE TABLE Escolhe_Escolhidos (
+    fk_Donatario_codigo varchar(50),
+    fk_Animais_codigo varchar(100)
+);
+ 
+ALTER TABLE Animais ADD CONSTRAINT FK_Animais_2
+    FOREIGN KEY (fk_Doador_codigo)
+    REFERENCES Doador (codigo)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Solicita_Doa ADD CONSTRAINT FK_Solicita_Doa_1
+    FOREIGN KEY (fk_Donatario_codigo)
+    REFERENCES Donatario (codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Solicita_Doa ADD CONSTRAINT FK_Solicita_Doa_2
+    FOREIGN KEY (fk_Doador_codigo)
+    REFERENCES Doador (codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Escolhe_Escolhidos ADD CONSTRAINT FK_Escolhe_Escolhidos_1
+    FOREIGN KEY (fk_Donatario_codigo)
+    REFERENCES Donatario (codigo)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Escolhe_Escolhidos ADD CONSTRAINT FK_Escolhe_Escolhidos_2
+    FOREIGN KEY (fk_Animais_codigo)
+    REFERENCES Animais (codigo)
+    ON DELETE SET NULL;
