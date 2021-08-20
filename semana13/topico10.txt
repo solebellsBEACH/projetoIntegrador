@@ -1,0 +1,16 @@
+
+Exemplo de Insert para um Animal
+INSERT INTO animal (codigo, sexo, nome, fk_doador_codigo, fk_tipo_animais_codigo) VALUES('5894513774', 'M', 'BOB', '5473012029', '1')
+
+Exemplo de Insert para um Doador
+INSERT INTO doador (codigo, nome_usuario, nome, senha) VALUES('123', 'lxs', 'lucas', '123')
+
+Exemplo de Insert para um Donatario
+INSERT INTO donatario (codigo,  nome_usuario, nome, senha,fk_animal_codigo) VALUES('1234', 'lxs4', 'maisa', '1223','342')
+
+
+{
+Lembrando que deve ser criado a table Doador depois a table Animal depois a table Donatário
+
+Ja que: para criar um Animal precisa de um doador e para criar um Donatario precisa de um animal por conta de suas chaves primarias
+}
