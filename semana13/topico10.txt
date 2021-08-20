@@ -8,6 +8,8 @@ INSERT INTO doador (codigo, nome_usuario, nome, senha) VALUES('123', 'lxs', 'luc
 Exemplo de Insert para um Donatario
 INSERT INTO donatario (codigo,  nome_usuario, nome, senha,fk_animal_codigo) VALUES('1234', 'lxs4', 'maisa', '1223','342')
 
+Exemplo de Insert para um Tipo de Animais
+INSERT INTO tipo_animais (codigo,  tipo) VALUES('4', 'Calopsita')
 
 {
 Lembrando que deve ser criado a table Doador depois a table Animal depois a table Donatário
